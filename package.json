@@ -1,0 +1,26 @@
+{
+  "name": "time-tracking-dashboard",
+  "version": "1.0.0",
+  "description": "![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/style.scss css/style.css -w",
+    "devserver": "live-server --port=8090",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "build": "sass sass/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0alken/time-tracking-dashboard.git"
+  },
+  "author": "s0alken",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s0alken/time-tracking-dashboard/issues"
+  },
+  "homepage": "https://github.com/s0alken/time-tracking-dashboard#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.0"
+  }
+}
