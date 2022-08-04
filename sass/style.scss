@@ -1,29 +1,5 @@
-//Colors
-
-//Primary
-
-$blue: hsl(246, 80%, 60%);
-
-$orange: hsl(15, 100%, 70%);
-$soft-blue: hsl(195, 74%, 62%);
-$light-red: hsl(348, 100%, 68%);
-$lime-green: hsl(145, 58%, 55%);
-$violet: hsl(264, 64%, 52%);
-$soft-orange: hsl(43, 84%, 65%);
-
-//Neutral
-
-$very-dark-blue: hsl(226, 43%, 10%);
-$dark-blue: hsl(235, 46%, 20%);
-$desaturated-blue: hsl(235, 45%, 61%);
-$pale-blue: hsl(236, 100%, 87%);
-$white: hsl(0, 0%, 100%);
-
-//Font family
-$font-primary: 'Rubik', sans-serif;
-
-//Breakpoint
-$breakpoint: 50em; //800px
+@import "variables";
+@import "mixins";
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
@@ -170,9 +146,11 @@ body {
 
         transition: all .3s;
 
-        &:hover {
-            cursor: pointer;
-            color: $white;
+        @include hover-support {
+            &:hover {
+                cursor: pointer;
+                color: $white;
+            }
         }
     }
 }
@@ -206,9 +184,11 @@ body {
             padding: 2.9rem 3rem 3.2rem 3rem;
         }
 
-        &:hover {
-            cursor: pointer;
-            background-color: hsl(235, 41%, 34%);
+        @include hover-support {
+            &:hover {
+                cursor: pointer;
+                background-color: hsl(235, 41%, 34%);
+            }
         }
     }
 
@@ -234,9 +214,11 @@ body {
             fill: $pale-blue;
             transition: all .3s;
 
-            &:hover {
-                cursor: pointer;
-                fill: $white;
+            @include hover-support {
+                &:hover {
+                    cursor: pointer;
+                    fill: $white;
+                }
             }
         }
     }

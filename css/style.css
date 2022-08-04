@@ -128,9 +128,11 @@ body {
   color: hsl(235deg, 45%, 61%);
   transition: all 0.3s;
 }
-.menu__label:hover {
-  cursor: pointer;
-  color: hsl(0deg, 0%, 100%);
+@media not all and (hover: none) {
+  .menu__label:hover {
+    cursor: pointer;
+    color: hsl(0deg, 0%, 100%);
+  }
 }
 
 .cards {
@@ -160,9 +162,11 @@ body {
     padding: 2.9rem 3rem 3.2rem 3rem;
   }
 }
-.card__body:hover {
-  cursor: pointer;
-  background-color: hsl(235deg, 41%, 34%);
+@media not all and (hover: none) {
+  .card__body:hover {
+    cursor: pointer;
+    background-color: hsl(235deg, 41%, 34%);
+  }
 }
 .card__menu {
   display: flex;
@@ -184,9 +188,11 @@ body {
   fill: hsl(236deg, 100%, 87%);
   transition: all 0.3s;
 }
-.card__button svg:hover {
-  cursor: pointer;
-  fill: hsl(0deg, 0%, 100%);
+@media not all and (hover: none) {
+  .card__button svg:hover {
+    cursor: pointer;
+    fill: hsl(0deg, 0%, 100%);
+  }
 }
 .card__activity {
   font-weight: 500;
