@@ -23,7 +23,7 @@ $white: hsl(0, 0%, 100%);
 $font-primary: 'Rubik', sans-serif;
 
 //Breakpoint
-$br-sm: 50em; //800px
+$breakpoint: 50em; //800px
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
@@ -64,7 +64,7 @@ body {
 
     margin: 8.1rem 2.4rem;
 
-    @media only screen and (min-width: $br-sm) {
+    @media only screen and (min-width: $breakpoint) {
         flex-direction: row;
         gap: 3rem;
 
@@ -76,7 +76,7 @@ body {
     background-color: $dark-blue;
     border-radius: 1.5rem;
 
-    @media only screen and (min-width: $br-sm) {
+    @media only screen and (min-width: $breakpoint) {
         max-width: 25.5rem;
     }
 }
@@ -90,7 +90,7 @@ body {
     align-items: center;
     gap: 2rem;
 
-    @media only screen and (min-width: $br-sm) {
+    @media only screen and (min-width: $breakpoint) {
         padding: 3.7rem 3.2rem 8rem;
         flex-direction: column;
         align-items: flex-start;
@@ -102,7 +102,7 @@ body {
         flex-direction: column;
         gap: .4rem;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             gap: .3rem;
         }
     }
@@ -117,7 +117,7 @@ body {
 
         //filter: drop-shadow(0 .4rem .4rem hsla(0, 0%, 0%, .25));
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             width: 7.8rem;
         }
     }
@@ -133,7 +133,7 @@ body {
 
         color: $white;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             font-size: 4rem;
             line-height: 4.7rem;
         }
@@ -146,7 +146,7 @@ body {
 
     padding: 2.4rem 3.2rem;
 
-    @media only screen and (min-width: $br-sm) {
+    @media only screen and (min-width: $breakpoint) {
         flex-direction: column;
         align-items: flex-start;
         gap: 2.1rem;
@@ -184,7 +184,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(25.5rem, 1fr));
     gap: 2.4rem;
 
-    @media only screen and (min-width: $br-sm) {
+    @media only screen and (min-width: $breakpoint) {
         gap: 3rem;
     }
 }
@@ -202,7 +202,7 @@ body {
 
         transition: all .3s;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             padding: 2.9rem 3rem 3.2rem 3rem;
         }
 
@@ -219,7 +219,7 @@ body {
 
         margin-bottom: .6rem;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             margin-bottom: 2.4rem;
         }
     }
@@ -254,7 +254,7 @@ body {
         justify-content: space-between;
         align-items: center;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             flex-direction: column;
             align-items: flex-start;
             gap: .8rem;
@@ -268,7 +268,7 @@ body {
 
         color: $white;
 
-        @media only screen and (min-width: $br-sm) {
+        @media only screen and (min-width: $breakpoint) {
             font-size: 5.6rem;
             line-height: 6.6rem;
         }
