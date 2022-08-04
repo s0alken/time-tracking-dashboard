@@ -10,10 +10,14 @@ const loadData = async (timeframe) => {
         const {current, previous} = activity.timeframes[timeframe];
         const card = cards[idx];
 
-        card.querySelector(".card__current").textContent = `${current}hrs`;
-        card.querySelector(".card__previous").textContent = `Last Week - ${previous}hrs`;
+        card.querySelector(".card__current").textContent = `${getHourLabel(current)}`;
+        card.querySelector(".card__previous").textContent = `Last Week - ${getHourLabel(previous)}`;
     });
 
+}
+
+const getHourLabel = (hour) => {
+    return `${hour}${hour === 1 ? "hr" : "hrs"}`;
 }
 
 options.forEach(option => {
