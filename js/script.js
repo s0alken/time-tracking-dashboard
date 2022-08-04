@@ -7,17 +7,43 @@ const loadData = async (timeframe) => {
     const data = await response.json();
 
     data.forEach((activity, idx) => {
-        const {current, previous} = activity.timeframes[timeframe];
+        const { current, previous } = activity.timeframes[timeframe];
         const card = cards[idx];
 
-        card.querySelector(".card__current").textContent = `${getHourLabel(current)}`;
-        card.querySelector(".card__previous").textContent = `Last Week - ${getHourLabel(previous)}`;
+        counterUp(current, card.querySelector(".card__current"), "current");
+        counterUp(previous, card.querySelector(".card__previous"), "previous");
     });
 
 }
 
-const getHourLabel = (hour) => {
-    return `${hour}${hour === 1 ? "hr" : "hrs"}`;
+let counterUp = (targetNumber, element, type) => {
+    let startingNumber = 0;
+    let animationSpeed = 10;
+    let growRatio = targetNumber / 100;
+
+    let interval = setInterval(() => {
+        if (startingNumber >= targetNumber) {
+            clearInterval(interval);
+        } else {
+            startingNumber += growRatio;
+            element.textContent = getLabel(startingNumber, type);
+        }
+
+    }, animationSpeed);
+};
+
+const getLabel = (hour, type) => {
+
+    hour = Math.round(hour);
+
+    const hourLabel = `${hour}${hour === 1 ? "hr" : "hrs"}`;
+
+    const labels = {
+        current: `${hourLabel}`,
+        previous: `Last Week - ${hourLabel}`,
+    }
+
+    return labels[type];
 }
 
 options.forEach(option => {
