@@ -1,72 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <link rel="stylesheet" href="css/style.css">
-  
+
+  <script src="js/script.js" defer></script>
+
   <title>Frontend Mentor | Time tracking dashboard</title>
 
 </head>
+
 <body>
 
-  Report for
-  Jeremy Robson
+  <main class="container">
+    <section class="navigation">
+      <div class="profile">
+        <img src="images/image-jeremy.png" alt="" class="profile__avatar">
+        <div class="profile__body">
+          <p class="profile__label">Report for</p>
+          <h1 class="profile__name">Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="menu">
+        <input type="radio" name="timeframe" value="daily" id="daily" class="menu__option">
+        <label for="daily" class="menu__label">Daily</label>
+        <input type="radio" name="timeframe" value="weekly" id="weekly" class="menu__option" checked="checked">
+        <label for="weekly" class="menu__label">Weekly</label>
+        <input type="radio" name="timeframe" value="monthly" id="monthly" class="menu__option">
+        <label for="monthly" class="menu__label">Monthly</label>
+      </div>
+    </section>
 
-  Daily
-  Weekly
-  Monthly
+    <section class="cards">
+      <div class="card work">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Work</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+      <div class="card play">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Play</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+      <div class="card study">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Study</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+      <div class="card exercise">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Exercise</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+      <div class="card social">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Social</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
-
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+      <div class="card self-care">
+        <div class="card__body">
+          <div class="card__menu">
+            <span class="card__activity">Self Care</span>
+            <button class="card__button">
+              <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="card__timeframe">
+            <h1 class="card__current"></h1>
+            <p class="card__previous"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
+
 </html>

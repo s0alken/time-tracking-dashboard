@@ -14,10 +14,236 @@ html {
 
 body {
   font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  background-color: hsl(226deg, 43%, 10%);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.container {
+  flex: 0 1 111rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin: 8.1rem 2.4rem;
+}
+@media only screen and (min-width: 50em) {
+  .container {
+    flex-direction: row;
+    gap: 3rem;
+    margin: 25.3rem 2.4rem;
+  }
+}
+
+.navigation {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 1.5rem;
+}
+@media only screen and (min-width: 50em) {
+  .navigation {
+    max-width: 25.5rem;
+  }
+}
+
+.profile {
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 1.5rem;
+  padding: 3.5rem 3.9rem 3.4rem 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+@media only screen and (min-width: 50em) {
+  .profile {
+    padding: 3.7rem 3.2rem 8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4.3rem;
+  }
+}
+.profile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+@media only screen and (min-width: 50em) {
+  .profile__body {
+    gap: 0.3rem;
+  }
+}
+.profile__avatar {
+  display: block;
+  width: 6.4rem;
+  height: auto;
+  border-radius: 50%;
+  outline: 0.3rem solid hsl(0deg, 0%, 100%);
+}
+@media only screen and (min-width: 50em) {
+  .profile__avatar {
+    width: 7.8rem;
+  }
+}
+.profile__label {
+  color: hsl(236deg, 100%, 87%);
+}
+.profile__name {
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  color: hsl(0deg, 0%, 100%);
+}
+@media only screen and (min-width: 50em) {
+  .profile__name {
+    font-size: 4rem;
+    line-height: 4.7rem;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 3.2rem;
+}
+@media only screen and (min-width: 50em) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.1rem;
+    padding: 2.6rem 3.2rem 3.3rem;
+  }
+}
+.menu__option {
+  display: none;
+}
+.menu__option:checked + .menu__label {
+  color: hsl(0deg, 0%, 100%);
+}
+.menu__label {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: hsl(235deg, 45%, 61%);
+  transition: all 0.3s;
+}
+.menu__label:hover {
+  cursor: pointer;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.cards {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25.5rem, 1fr));
+  gap: 2.4rem;
+}
+@media only screen and (min-width: 50em) {
+  .cards {
+    gap: 3rem;
+  }
+}
+
+.card {
+  border-radius: 1.5rem;
+}
+.card__body {
+  border-radius: 1.5rem;
+  padding: 2.8rem 2.4rem;
+  background-color: hsl(235deg, 46%, 20%);
+  margin-top: 4.6rem;
+  transition: all 0.3s;
+}
+@media only screen and (min-width: 50em) {
+  .card__body {
+    padding: 2.9rem 3rem 3.2rem 3rem;
+  }
+}
+.card__body:hover {
+  cursor: pointer;
+  background-color: hsl(235deg, 41%, 34%);
+}
+.card__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+@media only screen and (min-width: 50em) {
+  .card__menu {
+    margin-bottom: 2.4rem;
+  }
+}
+.card__button {
+  border: 0;
+  background: none;
+  display: flex;
+}
+.card__button svg {
+  fill: hsl(236deg, 100%, 87%);
+  transition: all 0.3s;
+}
+.card__button svg:hover {
+  cursor: pointer;
+  fill: hsl(0deg, 0%, 100%);
+}
+.card__activity {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: hsl(0deg, 0%, 100%);
+}
+.card__timeframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 50em) {
+  .card__timeframe {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+.card__current {
+  font-weight: 300;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  color: hsl(0deg, 0%, 100%);
+}
+@media only screen and (min-width: 50em) {
+  .card__current {
+    font-size: 5.6rem;
+    line-height: 6.6rem;
+  }
+}
+.card__previous {
+  color: hsl(236deg, 100%, 87%);
+}
+
+.work {
+  background: url(../images/icon-work.svg) no-repeat top -1.091rem right 1.742rem, linear-gradient(180deg, hsl(15deg, 100%, 70%) 0%, hsl(15deg, 100%, 70%) 50%, transparent 50%, transparent 100%);
+}
+
+.play {
+  background: url(../images/icon-play.svg) no-repeat top -0.49rem right 2.1rem, linear-gradient(180deg, hsl(195deg, 74%, 62%) 0%, hsl(195deg, 74%, 62%) 50%, transparent 50%, transparent 100%);
+}
+
+.study {
+  background: url(../images/icon-study.svg) no-repeat top -0.7rem right 1.707rem, linear-gradient(180deg, hsl(348deg, 100%, 68%) 0%, hsl(348deg, 100%, 68%) 50%, transparent 50%, transparent 100%);
+}
+
+.exercise {
+  background: url(../images/icon-exercise.svg) no-repeat top -0.1rem right 1.714rem, linear-gradient(180deg, hsl(145deg, 58%, 55%) 0%, hsl(145deg, 58%, 55%) 50%, transparent 50%, transparent 100%);
+}
+
+.social {
+  background: url(../images/icon-social.svg) no-repeat top -1.5rem right 1.348rem, linear-gradient(180deg, hsl(264deg, 64%, 52%) 0%, hsl(264deg, 64%, 52%) 50%, transparent 50%, transparent 100%);
+}
+
+.self-care {
+  background: url(../images/icon-self-care.svg) no-repeat top -1.1rem right 1.485rem, linear-gradient(180deg, hsl(43deg, 84%, 65%) 0%, hsl(43deg, 84%, 65%) 50%, transparent 50%, transparent 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
