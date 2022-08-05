@@ -1,7 +1,7 @@
 const options = document.querySelectorAll(".menu__option");
 const cards = document.querySelectorAll(".card");
 
-const loadData = async (timeframe) => {
+const loadData = async timeframe => {
 
     const response = await fetch("../data.json");
     const data = await response.json();
@@ -26,15 +26,13 @@ let counterUp = (targetNumber, element, type) => {
             clearInterval(interval);
         } else {
             startingNumber += growRatio;
-            element.textContent = getLabel(startingNumber, type);
+            element.textContent = getLabel(Math.round(startingNumber), type);
         }
 
     }, animationSpeed);
 };
 
 const getLabel = (hour, type) => {
-
-    hour = Math.round(hour);
 
     const hourLabel = `${hour}${hour === 1 ? "hr" : "hrs"}`;
 
