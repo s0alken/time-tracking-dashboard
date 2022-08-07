@@ -37,14 +37,14 @@ const getLabel = (hour, type, timeframe) => {
     const hourLabel = `${hour}${hour === 1 ? "hr" : "hrs"}`;
 
     const timeframeLabels = {
-        daily: "Day",
-        weekly: "Week",
-        monthly: "Month"
+        daily: "Yesterday",
+        weekly: "Last Week",
+        monthly: "Last Month"
     }
 
     const labels = {
         current: `${hourLabel}`,
-        previous: `Last ${timeframeLabels[timeframe]} - ${hourLabel}`,
+        previous: `${timeframeLabels[timeframe]} - ${hourLabel}`,
     }
 
     return labels[type];
