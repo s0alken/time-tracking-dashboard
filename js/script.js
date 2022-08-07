@@ -10,13 +10,13 @@ const loadData = async timeframe => {
         const { current, previous } = activity.timeframes[timeframe];
         const card = cards[idx];
 
-        counterUp(current, card.querySelector(".card__current"), "current");
-        counterUp(previous, card.querySelector(".card__previous"), "previous");
+        counterUp(current, card.querySelector(".card__current"), "current", timeframe);
+        counterUp(previous, card.querySelector(".card__previous"), "previous", timeframe);
     });
 
 }
 
-let counterUp = (targetNumber, element, type) => {
+let counterUp = (targetNumber, element, type, timeframe) => {
     let startingNumber = 0;
     let animationSpeed = 10;
     let growRatio = targetNumber / 100;
@@ -26,19 +26,25 @@ let counterUp = (targetNumber, element, type) => {
             clearInterval(interval);
         } else {
             startingNumber += growRatio;
-            element.textContent = getLabel(Math.round(startingNumber), type);
+            element.textContent = getLabel(Math.round(startingNumber), type, timeframe);
         }
 
     }, animationSpeed);
 };
 
-const getLabel = (hour, type) => {
+const getLabel = (hour, type, timeframe) => {
 
     const hourLabel = `${hour}${hour === 1 ? "hr" : "hrs"}`;
 
+    const timeframeLabels = {
+        daily: "Day",
+        weekly: "Week",
+        monthly: "Month"
+    }
+
     const labels = {
         current: `${hourLabel}`,
-        previous: `Last Week - ${hourLabel}`,
+        previous: `Last ${timeframeLabels[timeframe]} - ${hourLabel}`,
     }
 
     return labels[type];
